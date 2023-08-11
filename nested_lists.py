@@ -21,3 +21,10 @@ print(couples[1][0])
 couples[0][0][0]
 #to get first letter of the second person in the first couple
 couples[0][1][0]
+
+# Sorting the original list and creating a sorted copy for comparison
+sorted_couples = sorted(couples)
+
+# Comparing the sorted list with the sorted copy
+print(couples)  
+print(sorted_couples)
