@@ -20,8 +20,6 @@ for key in dict:
 
 value = "jayanth" in dict.values()
 print(value)
-print(dict.values())
+print(dict.values()) # returns a list of all the values in the dictionary
 
-print(dict.get("names"))
-
-
+print(dict.get("names")) # returns None if the key is not found
