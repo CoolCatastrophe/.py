@@ -1,4 +1,6 @@
 class Puppy:
+    gender = "male"
+
     def __init__(self, name, age, breed):
         self.name = name
         self.age = age
@@ -6,27 +8,34 @@ class Puppy:
         self.hunger = 0
         self.tricks = []
 
+    @classmethod
+    def register_stray(cls):
+        return cls("unknown", "unknown", "unknown")
+
     def add_trick(self, trick):
         if trick not in self.tricks and trick != "q":
             self.tricks.append(trick)
             print(f"{self.name} learned a new trick: {trick}")
-    def perform_trick(self,perform):
+
+    def perform_trick(self, perform):
         if perform in self.tricks:
             print(f"{self.name} can {perform}")
         else:
             print(f"{self.name} cannot do that trick: {perform}")
+
 
 jamie = Puppy("Jamie", 2, "Dalmatian")
 
 print(jamie.name)
 print(jamie.age)
 print(jamie.breed)
-t=None
+t = None
 while True:
-    if(t=="q"):
+    if t == "q":
         break
-    t = input("Type a Trick to Add(""q"" to quit): ")
+    t = input("Type a Trick to Add(" "q" " to quit): ")
     jamie.add_trick(t)
 
 print(f"List of all tricks: {jamie.tricks}")
 jamie.perform_trick("dance")
+print(Puppy.gender)
